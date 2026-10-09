@@ -361,6 +361,25 @@ h6 {
 	margin-right: 8px;
 }
 
+#hero .btn-my-thoughts {
+	background: #0563bb;
+	border: 2px solid #0563bb;
+	color: #fff;
+	padding: 8px 25px;
+	transition: 0.3s;
+	margin-left: 10px;
+}
+
+#hero .btn-my-thoughts:hover {
+	background: #0678e3;
+	border-color: #0678e3;
+	color: #fff;
+}
+
+#hero .btn-my-thoughts i {
+	margin-right: 8px;
+}
+
 @media (max-width: 992px) {
 	#hero {
 		text-align: center;
