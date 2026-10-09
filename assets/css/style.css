@@ -380,6 +380,15 @@ h6 {
 	margin-right: 8px;
 }
 
+@media (max-width: 767px) {
+	#hero .btn-primary,
+	#hero .btn-my-thoughts {
+		display: block;
+		width: 100%;
+		margin: 5px 0;
+	}
+}
+
 @media (max-width: 992px) {
 	#hero {
 		text-align: center;
