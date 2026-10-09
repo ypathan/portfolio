@@ -1,0 +1,3 @@
+- red hat and its contributions to the linux community
+- microsoft and google allowing us to use premium products free of charge
+- Í

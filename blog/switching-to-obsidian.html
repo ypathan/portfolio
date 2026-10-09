@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<title>Switching to Obsidian - Muhammad Yousuf</title>
+	<meta content="Why I moved from Notion to Obsidian and what it taught me about self-hosting my own note-sharing workflow."
+		name="description">
+
+	<!-- Favicons -->
+	<link href="../assets/img/favicon.png" rel="icon">
+	<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+		rel="stylesheet">
+
+	<!-- Vendor CSS Files -->
+	<link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+	<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+	<!-- Template Main CSS File -->
+	<link href="../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- ======= Header ======= -->
+	<header id="header" class="d-flex flex-column justify-content-center">
+		<nav id="navbar" class="navbar nav-menu">
+			<ul>
+				<li><a href="../index.html" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a>
+				</li>
+				<li><a href="index.html" class="nav-link scrollto active"><i class="bx bx-book-content"></i>
+						<span>Blog</span></a></li>
+			</ul>
+		</nav>
+	</header><!-- End Header -->
+
+	<main id="main">
+		<!-- ======= Blog Post Section ======= -->
+		<section id="blog-post" class="blog-post">
+			<div class="container" data-aos="fade-up">
+				<div class="section-title">
+					<h2>Switching to Obsidian</h2>
+				</div>
+
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<article class="blog-content">
+							<p>As I have talked about before, I have switched from Notion to Obsidian due to Notion
+								having some issues. Previously I talked about the technical side, how I have tried
+								different workflows and different deployments. This is just some thoughts on the whole
+								process and journey and how I feel about it.</p>
+
+							<p>Advantages Obsidian gives me that Notion did not provide:</p>
+
+							<ul>
+								<li><strong>Local storage:</strong> my notes are in my control. I have them on my
+									laptop, synced to my MacBook, version controlled using Git to GitHub, and uploaded
+									to my VPS so that I can share them publicly, specifically my worklogs and
+									work-related documents that I share with colleagues.</li>
+								<li><strong>Access to AI:</strong> Notion AI was an extra payment of around $20 or
+									something. Now I can just use opencode, it provides free models that I can use for
+									simple tasks, and I can connect my DeepSeek API when I need something heavier.</li>
+								<li><strong>I had to create my own note-sharing workflow apart from Notion:</strong>
+									this taught me about caching (validation, what type of files to cache), using Docker
+									mount points, and nginx performance tuning (workers, threads). Although I was asking
+									AI to do it, at least now I have a rough idea of how these tools work, and if I need
+									them in the future, that idea in my head with some help from AI should be good
+									enough to point me in the right direction.</li>
+								<li><strong>I now have something I use on a daily basis hosted on my own server after
+										so long:</strong> from 2021 when I got introduced to Linux and self-hosting, for
+									90% of the time during these 5 years I've had my own server to play around with
+									stuff, but for the first time now I have had a real-world use case for it and a
+									dependency on it on a day-to-day basis.</li>
+							</ul>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section><!-- End Blog Post Section -->
+	</main>
+
+	<div id="preloader"></div>
+
+	<!-- Vendor JS Files -->
+	<script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+	<script src="../assets/vendor/aos/aos.js"></script>
+	<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="../assets/vendor/typed.js/typed.min.js"></script>
+	<script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+	<!-- Template Main JS File -->
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>

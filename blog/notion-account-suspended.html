@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<title>Notion Account Suspended - Muhammad Yousuf</title>
+	<meta content="Losing access to my Notion account pushed me to build a self-hosted, public worklog using Obsidian, Quartz and nginx."
+		name="description">
+
+	<!-- Favicons -->
+	<link href="../assets/img/favicon.png" rel="icon">
+	<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+		rel="stylesheet">
+
+	<!-- Vendor CSS Files -->
+	<link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+	<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+	<!-- Template Main CSS File -->
+	<link href="../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- ======= Header ======= -->
+	<header id="header" class="d-flex flex-column justify-content-center">
+		<nav id="navbar" class="navbar nav-menu">
+			<ul>
+				<li><a href="../index.html" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a>
+				</li>
+				<li><a href="index.html" class="nav-link scrollto active"><i class="bx bx-book-content"></i>
+						<span>Blog</span></a></li>
+			</ul>
+		</nav>
+	</header><!-- End Header -->
+
+	<main id="main">
+		<!-- ======= Blog Post Section ======= -->
+		<section id="blog-post" class="blog-post">
+			<div class="container" data-aos="fade-up">
+				<div class="section-title">
+					<h2>Notion Account Suspended</h2>
+				</div>
+
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<article class="blog-content">
+							<p>A few days ago, I found out that my Notion account was suspended because I did not pay
+								the subscription fee on time, though I remember purchasing the subscription and then
+								cancelling it after it did not do what I wanted it to do. Anyway, I forgot about it.
+								Then a few days ago I found out that my Notion account was locked. I couldn't access all
+								my notes, my worklogs of about 3 months, and other documents that I had created. I knew
+								I would eventually find a way to get them back, either by paying the outstanding invoice
+								or by finding some loopholes.</p>
+
+							<p>However, some time ago I had to access some previously created documents and was unable
+								to do so. This motivated me to pick back up a project I had almost abandoned some time
+								ago: converting my Obsidian markdown files into HTML and then using a static file server
+								to share them publicly.</p>
+
+							<p>Previously I had tried a few things, but they were based around the idea of replicating
+								Notion-like individual note sharing, whereby I could specify a single file to be
+								converted to HTML and shared publicly. But that posed a problem, because Obsidian notes
+								are not single files, especially when they contain images. Images are files located in
+								a separate directory and linked by filename. In Obsidian you can specify where
+								attachments are stored, and Obsidian itself will find all images and attachments in the
+								folder regardless of where the source file is located, meaning the relative path problem
+								is not there anymore.</p>
+
+							<p>This becomes a problem when using tools like pandoc to convert markdown to HTML, because
+								the relative path is not a thing and it cannot locate the links. I also did not spend
+								time finding ways to specify to pandoc where linked files might be located. I looked into
+								some Obsidian plugins that would export the entire vault as a directory to be shared,
+								handling image linking for you, but that was not my goal at the time. I also found tools
+								(Obsidian plugins) that would find the images and embed them into the HTML as binary
+								data, but I could not find a way at the time to use the plugin API to call the plugin
+								from external scripts. In the end I came up with a hacky solution (I don't remember
+								correctly now) where I could use some tools to export a particular note, upload it
+								manually to the server, and then use a Go file server to serve it. This is good for cases
+								where I want to share notes with someone without letting them see the other notes,
+								because each note has a unique title so they cannot guess (hopefully), and it also had a
+								private endpoint through which the admin can view all listed notes.</p>
+
+							<p>However, as of 2 days ago, that's not what I wanted. I wanted a public worklog which I
+								would update on a daily basis, that included my daily logs along with an appendix
+								directory for other documents I created like guides, etc. For this particular scenario, I
+								first created a separate Obsidian vault, then created a script that could be triggered to
+								rsync my notes to my server. On Linux I used fuzzel/dmenu to trigger the script, and on
+								macOS I can use an Alfred workflow. On the server there is a systemd service using Quartz
+								to watch a particular directory; if it detects any change, it will auto-run the Quartz
+								build command and generate HTML from the markdown. Then I have a performance-tuned nginx
+								with heavy caching configured, serving the files on port 9000, and another Dokploy nginx
+								container that proxies that traffic and binds it to the log.yousuf.life domain with an
+								SSL certificate.</p>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section><!-- End Blog Post Section -->
+	</main>
+
+	<div id="preloader"></div>
+
+	<!-- Vendor JS Files -->
+	<script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+	<script src="../assets/vendor/aos/aos.js"></script>
+	<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="../assets/vendor/typed.js/typed.min.js"></script>
+	<script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+	<!-- Template Main JS File -->
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>
